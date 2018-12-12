@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lista postów</title>
+	{% load static %}
+	<link rel='stylesheet' href="{% static 'bootstrap/dist/css/bootstrap.min.css'%}">
+	<link rel='stylesheet' href="{% static 'styles/style.css'%}">
+
+
+</head>
+<body>
+	<div class = 'container'>
+		<div id="banner">
+			<ul class="list-inline">
+				<li>
+					<a href="{% url 'main' %}" >
+						<button class="btn btn-info">Home</button>
+					</a>
+				</li>
+				<li>
+					<a href="{% url 'add-post' %}" >
+						<button class="btn btn-info">dodaj post</button>
+					</a>
+				</li>
+				<li>
+					<a href="{% url 'main' %}" >
+						<button class="btn btn-info">logowanie</button>
+					</a>
+				</li>
+				<li>
+					<a href="{% url 'registration' %}" >
+						<button class="btn btn-info">rejestracja</button>
+					</a>
+				</li>
+
+			</ul>
+			
+		</div>
+		<br><br>
+		{% block content %}
+		{% endblock %}
+
+		
+
+	</div>
+	<div id="footer" class="container">
+		Trening django by Lukass
+	</div>
+
+
+
+</body>
+</html>

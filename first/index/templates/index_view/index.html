@@ -1,0 +1,24 @@
+{% extends 'index_view/template.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'add-post' %}">
+	<div class = "form-group">
+		{% csrf_token %}
+
+			
+			{%for field in form%}
+			
+				
+				<label>
+					<p>{{field.label}}</p>
+				
+
+					{{ field }}
+				</label>
+				<br>
+
+			{% endfor %}
+
+			<input type ="submit" value="add new post" class = "btn btn-success">
+		</form>
+{% endblock %}

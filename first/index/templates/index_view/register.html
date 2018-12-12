@@ -1,0 +1,18 @@
+{% extends 'index_view/template.html' %}
+
+{% block content %}
+	<h1>Rejestracja</h1>
+<form action="/register/" method="POST">
+	{% csrf_token %}
+	{% for field in form %}
+
+		<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+		{{ field }}
+
+		<br>
+		
+	{% endfor %}
+	<input type="submit" value="zarejestruj" class = 'btn btn-success'>
+</form>
+
+{% endblock %}

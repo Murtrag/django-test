@@ -1,0 +1,35 @@
+body {
+	background: url('/media/sand.jpg');
+}
+.container {
+	background-color: rgba(188, 195, 44, 0.84);
+}
+#banner > ul {
+	position: relative;
+	top: 250px;
+	text-align: center;
+}
+#banner {
+	background: url('/media/banner.jpg');
+	width:850px;
+	height:300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post-object {
+	background-color: yellow;
+}
+
+#footer {
+	margin-top: 5px;	
+	background-color: orange;
+	text-align: center;
+	word-spacing: 10px;
+	letter-spacing: 2px;
+}
+
+form > label {
+	min-width: 160px;
+
+}

@@ -1,0 +1,19 @@
+{% extends 'index_view/template.html' %}
+
+{% block content %}
+<h1>Logowanie</h1>
+<form action="/register/" method="POST">
+	{% csrf_token %}
+	<label for="login">login</label>
+	<input id="login" name="login" type="text">
+	<br>
+	<label for="pass">pass</label>
+	<input id="pass" name="pass" type="password">
+	<br>
+
+	<input type="submit" value="zaloguj" class="btn btn-success">
+
+		
+</form>
+
+{% endblock %}

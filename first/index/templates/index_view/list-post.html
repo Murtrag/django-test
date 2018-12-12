@@ -1,0 +1,20 @@
+{% extends 'index_view/template.html' %}
+
+{% block content %}
+{% for item in object_list %}
+
+<div class="post-object">
+	<h1>{{item.topic}}</h1>	
+
+	<form method="post" action="{% url  'remove-post' pk=item.pk%}">{% csrf_token %}		    
+		<input type="submit" value="remove post ; (" class = 'btn btn-danger'>
+	</form>
+
+
+<br><br>
+
+<p>{{item.text_message}}</p>
+</div>
+<br><br>
+{% endfor %}
+{% endblock %}
