@@ -53,7 +53,11 @@ class Login(View):
 		#authenticate, login
 		username = request.POST['login']
 		password = request.POST['pass']
-		user = authenticate(request, user=username,password=password)
+		print("aaaaaaaaaaaaaaa")
+		print(username,password)
+		print("aaaaaaaaaaaaaaa")
+		user = authenticate(request, username=username, password=password)
+		print(user)
 		if user is not None:
 			login(request,user)
 			return redirect(reverse_lazy("main"))
