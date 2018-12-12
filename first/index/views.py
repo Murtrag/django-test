@@ -31,10 +31,11 @@ class RemovePost(DeleteView):
 class Registration(View):
 	template_name="index_view/register.html"
 	def get(self, request):
-		form = UserCreationForm(None)
+		form = UserCreationForm()
 		return render(request,self.template_name,{'form':form})
 	def post(self, request):
 		form = UserCreationForm(request.POST) #,instance=request.user
+		print(form.is_valid())
 		if form.is_valid():
 			user = form.save(commit=False)
 			user.username = form.cleaned_data['username']
@@ -52,11 +53,10 @@ class Login(View):
 		#authenticate, login
 		username = request.POST['login']
 		password = request.POST['pass']
-		user = authenticate(user=username,password=password)
+		user = authenticate(request, user=username,password=password)
 		if user is not None:
-			if user.is_active:
-				login(request,user)
-				return redirect(reverse_lazy("main"))
+			login(request,user)
+			return redirect(reverse_lazy("main"))
 
 
 
